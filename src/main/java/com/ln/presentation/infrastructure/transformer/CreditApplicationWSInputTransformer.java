@@ -1,14 +1,15 @@
-package com.ln.presentation;
+package com.ln.presentation.infrastructure.transformer;
 
+import com.ln.presentation.domain.CreditApplication;
+import org.springframework.integration.transformer.GenericTransformer;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 
 import javax.xml.transform.dom.DOMSource;
 import java.math.BigDecimal;
 
-public class CreditApplicationWSInputTransformer implements org.springframework.integration.transformer.GenericTransformer<DOMSource, CreditApplication> {
+public class CreditApplicationWSInputTransformer implements GenericTransformer<DOMSource, CreditApplication> {
 
-    @Override
     public CreditApplication transform(DOMSource s) {
         Node node = s.getNode();
         String prefix = node.getPrefix();

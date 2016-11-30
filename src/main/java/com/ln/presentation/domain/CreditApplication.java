@@ -1,4 +1,4 @@
-package com.ln.presentation;
+package com.ln.presentation.domain;
 
 import java.math.BigDecimal;
 
