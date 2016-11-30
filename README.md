@@ -1,2 +1,2 @@
-# presentation
-Spring integration presentation
+# Presentation
+Spring integration showcase.
