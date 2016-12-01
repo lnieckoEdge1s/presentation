@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.IntegrationComponentScan;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
+import org.springframework.integration.handler.LoggingHandler;
 import org.springframework.integration.ws.SimpleWebServiceInboundGateway;
 import org.springframework.ws.config.annotation.WsConfigurerAdapter;
 import org.springframework.ws.server.endpoint.MessageEndpoint;
@@ -58,6 +59,9 @@ public class IntegrationConfiguration extends WsConfigurerAdapter {
                         .recipientFlow(message -> RoutingCreditApplicationChooser.isOffline(message.getHeaders()),
                                 sf -> sf.channel(Channels.CHANNEL_OFFLINE_APP_INPUT)
                                                 .handle(CreditApplication.class, (p, h) -> {offlineCreditApplicationHandler.handle(p); return null;})))
+                .channel(Channels.CHANNEL_LOGGING)
+                .handle(new LoggingHandler("INFO"))
                 .get();
     }
+
 }

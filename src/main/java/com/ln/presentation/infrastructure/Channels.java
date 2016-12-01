@@ -7,4 +7,5 @@ public interface Channels {
     String CHANNEL_CUSTOM_SOURCE_INPUT = "channel.customsource.input";
     String CHANNEL_ONLINE_APP_INPUT = "channel.online.app.input";
     String CHANNEL_OFFLINE_APP_INPUT = "channel.offline.app.input";
+    String CHANNEL_LOGGING = "channel.logging";
 }
