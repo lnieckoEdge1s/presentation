@@ -1,7 +1,8 @@
 package com.ln.presentation.infrastructure;
 
 
-import com.ln.presentation.domain.CreditApplicationHandler;
+import com.ln.presentation.domain.OfflineCreditApplicationHandler;
+import com.ln.presentation.domain.OnlineCreditApplicationHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,7 +10,12 @@ import org.springframework.context.annotation.Configuration;
 public class DomainConfiguration {
 
     @Bean
-    CreditApplicationHandler applicationHandler() {
-        return new CreditApplicationHandler();
+    OfflineCreditApplicationHandler offlineApplicationHandler() {
+        return new OfflineCreditApplicationHandler();
+    }
+
+    @Bean
+    OnlineCreditApplicationHandler onlineApplicationHandler() {
+        return new OnlineCreditApplicationHandler();
     }
 }
