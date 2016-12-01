@@ -6,6 +6,7 @@ import org.springframework.integration.channel.DirectChannel;
 import org.springframework.messaging.MessageChannel;
 
 import static com.ln.presentation.infrastructure.Channels.CHANNEL_APPLICATION_INPUT;
+import static com.ln.presentation.infrastructure.Channels.CHANNEL_CUSTOM_SOURCE_INPUT;
 
 @Configuration
 public class ChannelsConfiguration {
@@ -14,4 +15,10 @@ public class ChannelsConfiguration {
     public MessageChannel channelApplicationInput() {
         return new DirectChannel();
     }
+
+    @Bean(name = CHANNEL_CUSTOM_SOURCE_INPUT)
+    public MessageChannel channelCustomSourceInput() {
+        return new DirectChannel();
+    }
+
 }
